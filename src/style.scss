@@ -1,0 +1,367 @@
+@import 'https://fonts.googleapis.com/css?family=Rubik:300,700,900';
+$black: #444;
+$white: #fff;
+$grey: #585858;
+$grey-tint: #eaeaea;
+
+$primary-color: #a483c5;
+$primary-color-dark: darken( $primary-color, 10% );
+$primary-color-tint: lighten( $primary-color, 25% );
+
+$secondary-color: #f6734a;
+$secondary-color-dark: darken( $secondary-color, 15% );
+$secondary-color-dark-2: darken( $secondary-color, 25% );
+$secondary-color-tint: lighten( $secondary-color, 15% );
+$secondary-color-tint-2: lighten( $secondary-color, 25% );
+
+$primary-font: "Rubik", sans-serif;
+
+%text-box {
+	display: inline-block;
+	padding: 0.25em;
+	font-weight: 700;
+	font-size: 1.25rem;
+	line-height: 1.15;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: $white;
+}
+
+* { box-sizing: border-box; }
+body {
+	font-family: $primary-font;
+	font-size: 16px;
+	line-height: 1.875em;
+	color: $black;
+}
+
+a {
+	position: relative;
+	z-index: 1;
+	border-bottom: dotted 1px;
+	text-decoration: none;
+	color: $primary-color;
+	transition: 0.2s;
+	
+	&::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $primary-color;
+		transform: scaleX(0);
+		transform-origin: left center;
+		transition: 0.25s ease-in-out;
+	}
+	
+	&:hover {
+		color: $white; 
+		border-bottom: solid 1px;
+		transition: 0.2s 0.15s;
+		
+		&::after {
+			transform: scaleX(1);
+		}
+	}
+}
+
+.well {
+	padding: 1rem;
+	background-color: $primary-color-tint;
+}
+
+.list-separator {
+	> li {
+		display: inline-block;
+		
+		&:not(:first-child) {
+			&::before {
+				content: '|';
+				padding: 0 0.5em;
+			}
+		}
+	}
+}
+
+.list-flex {
+	> li {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+	}
+}
+
+.list-blox {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+	grid-gap: 0.25rem;
+	
+	> li {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-height: 50px;
+		font-weight: 700;
+		font-size: 0.75rem;
+		line-height: 1.15;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		text-align: center;
+	}
+}
+
+.chart {
+	height: 250px;
+}
+
+.table {
+	width: 100%;
+	
+	thead {
+		th {
+			padding-bottom: 0;
+			border-bottom: solid 4px $primary-color;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: $primary-color;
+		}
+	}
+	
+	tbody {
+		th,
+		td {
+			border-bottom: solid 2px $grey-tint;
+		}
+	}
+	
+	th,
+	td {
+		padding: 0.25em 0.5em;
+		text-align: right;
+	}
+	
+	&-wrapper {
+		overflow-x: auto;
+		
+		> .table {
+			min-width: 400px;
+		}
+	}
+}
+
+.section-block {
+	padding: 2rem 0;
+	
+	&:first-of-type {
+		padding-top: 0;
+	}
+	
+	&-header {
+		margin-bottom: 0.5rem;
+		font-weight: 700;
+		font-size: 2.5rem;
+		color: $secondary-color;
+		text-transform: uppercase;
+	}
+}
+
+.hero {
+	margin-top: 2.5rem;
+	margin-bottom: 2rem;
+	
+	h1 {
+		background: -webkit-linear-gradient(0deg, $primary-color, $secondary-color);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+		font-weight: 900;
+		font-size: 4.5rem;
+		line-height: 0.75;
+		text-transform: uppercase;
+		color: $primary-color;
+	}
+	
+	.subheader {
+		@extend %text-box; 
+		position: relative;
+		top: -0.75rem;
+		left: -0.25rem;
+		background-color: $secondary-color;
+	}
+}
+
+.footer {
+	padding: 50px 0;
+	background-color: $secondary-color;
+	color: $white;
+	
+	a {
+		color: $white;
+		text-decoration: none;
+	}
+}
+
+.sidebar {
+	// margin-bottom: 4rem;
+	padding-left: 1rem;
+	background-color: $white;
+	
+	&::before {
+		content: '';
+		position: absolute;
+		left: 0;
+		height: 100%;
+		width: 5px;
+		background: linear-gradient(to bottom, $primary-color, $secondary-color)
+	}
+	
+	.list-header {
+		color: $primary-color;
+		font-weight: 700;
+		text-transform: uppercase;
+	}
+	
+	.list-flex {
+		> li {
+			border-bottom: solid 2px $grey-tint;
+		}
+		
+		.icon {
+			font-size: 1.25rem;
+			line-height: 1.5em;
+			color: $secondary-color;
+		}
+	}
+	
+	.list-blox {
+		> li {
+			color: $white;
+			opacity: 0.25;
+			
+			&:nth-child(1) {
+				background-color: $primary-color;
+			}
+			&:nth-child(2) {
+				background-color: #b97fa6;
+			}
+			&:nth-child(3) {
+				background-color: #cd7b88;
+			}
+			&:nth-child(4) {
+				background-color: #e27769;
+			}
+			&:nth-child(5) {
+				background-color: $secondary-color;
+			}
+			
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+	
+	.well {
+		.list-flex {
+			> li {
+				border-bottom: solid 2px $primary-color;
+				
+				a {
+					border-bottom: 0;
+				}
+			}
+		}
+	}
+	
+	&-header {
+		@extend %text-box; 
+		margin-bottom: 0.5em;
+		background-color: $primary-color-dark;
+		
+		&:not(:first-of-type) {
+			margin-top: 2rem;
+		}
+		
+		+ .well {
+			padding-top: 1.5rem;
+			margin-top: -1.5rem;
+		}
+	}
+}
+
+.sidebar-fixed {
+	position: relative;
+}
+
+.highcharts {
+	&-root {
+		font-family: $primary-font !important;
+	}
+	
+	&-color-0 {
+		--fill-color: #{$secondary-color};
+	}
+
+	&-color-1 {
+		--fill-color: #{$secondary-color-dark};
+	}
+
+	&-color-2 {
+		--fill-color: #{$secondary-color-dark-2};
+	}
+
+	&-color-3 {
+		--fill-color: #{$secondary-color-tint-2};
+	}
+
+	&-color-4 {
+		--fill-color: #{$secondary-color-tint};
+	}
+
+	&-point,
+	&-halo {
+		fill: var(--fill-color);
+	}
+	
+	&-pie-series {
+		.highcharts-point {
+			stroke-width: 4;
+		}
+	}
+	
+	&-markers {
+		path {
+			fill: var(--fill-color);
+		}
+	}
+	
+	&-graph {
+		stroke: var(--fill-color);
+		stroke-width: 4;
+	}
+
+	&-label-box {
+		stroke-width: 4;
+		stroke: var(--fill-color);
+		fill: $white;
+	}
+	
+	&-legend-item {
+		text {
+			font-weight: 300 !important;
+			font-size: 0.875rem !important;
+			fill: $black !important;
+			color: $black !important;
+		}
+	}
+	
+	&-axis-line {
+		stroke: $grey-tint;
+		stroke-width: 4;
+	}
+	&-tick {
+		stroke-width: 0;
+	}
+}
+
