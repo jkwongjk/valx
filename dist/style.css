@@ -1,0 +1,320 @@
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url("https://fonts.googleapis.com/css?family=Bebas Neue:100,300,700,900");
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+}
+
+.sidebar-header, .hero .subheader {
+  font-family: "Bebas Neue", sans-serif;
+  display: inline-block;
+  padding: 0.25em;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.5em;
+  color: #FFF;
+  background-color: #000;
+  font-family: "Roboto";
+}
+
+a {
+  position: relative;
+  z-index: 1;
+  border-bottom: dotted 1px;
+  text-decoration: none;
+  color: #F24462;
+  transition: 0.2s;
+}
+a::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: 0.25s ease-in-out;
+}
+a:hover {
+  color: #F24462;
+  border-bottom: solid 1px;
+  transition: 0.2s 0.15s;
+}
+a:hover::after {
+  transform: scaleX(1);
+}
+
+.well {
+  padding: 1rem;
+  background-color: #191B21;
+}
+
+.list-separator > li {
+  display: inline-block;
+}
+.list-separator > li:not(:first-child)::before {
+  content: "|";
+  padding: 0 0.5em;
+}
+
+.list-flex > li {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.list-blox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-gap: 0.25rem;
+}
+.list-blox > li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  line-height: 1.15;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: #F24462;
+}
+
+.chart {
+  height: 250px;
+  background-color: #191B21 !important;
+  border: 1px #191b21 !important;
+  border-radius: 12px !important;
+}
+
+.table {
+  width: 100%;
+  background-color: #191B21;
+}
+.table thead th {
+  padding-bottom: 0;
+  border-bottom: solid 4px #F24462;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #F24462;
+}
+.table tbody th,
+.table tbody td {
+  border-bottom: solid 2px #eaeaea;
+}
+.table th,
+.table td {
+  padding: 0.25em 0.5em;
+  text-align: right;
+}
+.table-wrapper {
+  overflow-x: auto;
+}
+.table-wrapper > .table {
+  min-width: 400px;
+}
+
+.section-block {
+  padding: 2rem 0;
+}
+.section-block:first-of-type {
+  padding-top: 0;
+}
+.section-block-header {
+  font-family: "Bebas Neue", sans-serif;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+  font-size: 2rem;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.hero {
+  margin-top: 2.5rem;
+  margin-bottom: 2rem;
+}
+.hero h1 {
+  background: -webkit-linear-gradient(0deg, #fff, #eee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  font-size: 4.5rem;
+  line-height: 0.75;
+  text-transform: uppercase;
+  color: #a483c5;
+  font-family: "Bebas Neue";
+}
+.hero .subheader {
+  position: relative;
+  top: -0.75rem;
+  left: -0.25rem;
+  background-color: #F24462;
+}
+
+.footer {
+  padding: 50px 0;
+  background-color: #191B21;
+  color: #fff;
+}
+.footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar {
+  padding: 1rem;
+  background-color: #191B21;
+}
+.sidebar::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 5px;
+  background: linear-gradient(to bottom, #a483c5, #F24462);
+}
+.sidebar .list-header {
+  color: #fff;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-family: "Bebas Neue";
+}
+.sidebar .list-flex > li {
+  border-bottom: solid 2px #eaeaea;
+}
+.sidebar .list-flex .icon {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  color: #F24462;
+}
+.sidebar .list-blox > li {
+  color: #fff;
+  opacity: 0.25;
+}
+.sidebar .list-blox > li:nth-child(1) {
+  background-color: #ffffff;
+  color: #F24462;
+}
+.sidebar .list-blox > li:nth-child(2) {
+  background-color: #ffffff;
+  color: #F24462;
+}
+.sidebar .list-blox > li:nth-child(3) {
+  background-color: #ffffff;
+  color: #F24462;
+}
+.sidebar .list-blox > li:nth-child(4) {
+  background-color: #ffffff;
+  color: #F24462;
+}
+.sidebar .list-blox > li:nth-child(5) {
+  background-color: #ffffff;
+  color: #F24462;
+}
+.sidebar .list-blox > li.active {
+  opacity: 1;
+  color: #F24462;
+}
+.sidebar .well .list-flex > li {
+  border-bottom: solid 2px #CCCCCC;
+}
+.sidebar .well .list-flex > li a {
+  border-bottom: 0;
+  color: #ffffff;
+}
+.sidebar-header {
+  margin-bottom: 0.5em;
+  background-color: #F24462;
+  color: #fff;
+  margin-left: 0px;
+}
+.sidebar-header:not(:first-of-type) {
+  margin-top: 2rem;
+}
+.sidebar-header + .well {
+  padding-top: 1.5rem;
+  margin-top: -1.5rem;
+}
+
+.sidebar-fixed {
+  position: relative;
+}
+
+.highcharts-root {
+  font-family: "Roboto", sans-serif !important;
+}
+.highcharts-color-0 {
+  --fill-color: #F24462;
+}
+.highcharts-color-1 {
+  --fill-color: #e8400c;
+}
+.highcharts-color-2 {
+  --fill-color: #b73309;
+}
+.highcharts-color-3 {
+  --fill-color: #fcd1c3;
+}
+.highcharts-color-4 {
+  --fill-color: #faab93;
+}
+.highcharts-point, .highcharts-halo {
+  fill: var(--fill-color);
+}
+.highcharts-pie-series .highcharts-point {
+  stroke-width: 4;
+}
+.highcharts-markers path {
+  fill: var(--fill-color);
+}
+.highcharts-graph {
+  stroke: var(--fill-color);
+  stroke-width: 4;
+}
+.highcharts-label-box {
+  stroke-width: 4;
+  stroke: var(--fill-color);
+  fill: #fff;
+}
+.highcharts-legend-item text {
+  font-weight: 300 !important;
+  font-size: 0.875rem !important;
+  fill: #444 !important;
+  color: #ffffff !important;
+}
+.highcharts-axis-line {
+  stroke: #eaeaea;
+  stroke-width: 4;
+}
+.highcharts-tick {
+  stroke-width: 0;
+}
+
+.highcharts-background {
+  background-color: #191B21 !important;
+  fill: #191B21 !important;
+  border: 1px #191b21 !important;
+  border-radius: 12px !important;
+}
